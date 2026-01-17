@@ -1,5 +1,5 @@
 {
-  "name": "express-zod-swgger-example",
+  "name": "express-ts-zod-openapi-example",
   "private": true,
   "scripts": {
     "start": "ts-node --project ./tsconfig.json server.ts"

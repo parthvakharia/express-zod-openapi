@@ -1,6 +1,6 @@
-# express-zod-openapi
+# express-ts-zod-openapi
 
-[![npm version](https://img.shields.io/npm/v/express-zod-openapi.svg)](https://www.npmjs.com/package/express-ts-zod-openapi)
+[![npm version](https://img.shields.io/npm/v/express-ts-zod-openapi.svg)](https://www.npmjs.com/package/express-ts-zod-openapi)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 > Type-safe Express APIs with Zod validation and automatic OpenAPI/Swagger generation
@@ -20,12 +20,12 @@ Build fully typed Express APIs with automatic request/response validation and Op
 ## Installation
 
 ```bash
-npm install express-zod-openapi zod express
+npm install express-ts-zod-openapi zod express
 ```
 
 ```bash
 # Or with yarn
-yarn add express-zod-openapi zod express
+yarn add express-ts-zod-openapi zod express
 ```
 
 **Peer Dependencies:**
@@ -63,7 +63,7 @@ The OpenAPI generator has comprehensive support for Zod types:
 ### 1. Create a router instance
 
 ```ts
-import { TypedRouter } from 'express-zod-openapi';
+import { TypedRouter } from 'express-ts-zod-openapi';
 import { z } from 'zod';
 
 const router = new TypedRouter();
@@ -95,7 +95,7 @@ router.get('/users/:id', {
 
 ```ts
 import express from 'express';
-import { buildOpenApi } from 'express-zod-openapi';
+import { buildOpenApi } from 'express-ts-zod-openapi';
 
 const app = express();
 app.use(express.json());
@@ -123,7 +123,7 @@ For multi-file projects, export a shared router instance:
 
 ```ts
 // typedRouter.ts
-import { TypedRouter } from 'express-zod-openapi';
+import { TypedRouter } from 'express-ts-zod-openapi';
 export const router = new TypedRouter();
 
 // routes/users.ts
@@ -146,7 +146,7 @@ router.register(app);
 For cleaner controller functions, use `HandlerContext`:
 
 ```ts
-import { HandlerContext } from 'express-zod-openapi';
+import { HandlerContext } from 'express-ts-zod-openapi';
 
 type CreateUserContext = HandlerContext<{
   body: { name: string; email: string };
@@ -172,7 +172,7 @@ Extend `HandlerContext` with custom Request types for middleware-added propertie
 
 ```ts
 import { Request } from 'express';
-import { HandlerContext } from 'express-zod-openapi';
+import { HandlerContext } from 'express-ts-zod-openapi';
 
 // Define custom Request with middleware properties
 interface AuthRequest extends Request {
@@ -210,7 +210,7 @@ export const updateProfile = ({ req, parsed }: HandlerContext<{
 Use `withSchemaName` to create reusable component schemas:
 
 ```ts
-import { withSchemaName } from 'express-zod-openapi';
+import { withSchemaName } from 'express-ts-zod-openapi';
 
 const User = withSchemaName(
   z.object({
@@ -226,7 +226,7 @@ const User = withSchemaName(
 
 ### Complete Working Application
 
-See the [example folder](https://github.com/yourusername/express-zod-openapi/tree/main/example) for a complete application featuring:
+See the [example folder](https://github.com/pvakharia9033/express-ts-zod-openapi/tree/main/example) for a complete application featuring:
 - ✅ Modular project structure (routes/controllers/types)
 - ✅ Multiple resources (Users & Animals)
 - ✅ Full CRUD operations
@@ -235,8 +235,8 @@ See the [example folder](https://github.com/yourusername/express-zod-openapi/tre
 
 **Run the example:**
 ```bash
-git clone https://github.com/yourusername/express-zod-openapi.git
-cd express-zod-openapi/example
+git clone https://github.com/pvakharia9033/express-ts-zod-openapi.git
+cd express-ts-zod-openapi/example
 npm install
 npm start
 # VisitDocumentation
@@ -246,7 +246,7 @@ npm start
 Main router class for defining type-safe routes.
 
 ```ts
-import { TypedRouter } from 'express-zod-openapi';
+import { TypedRouter } from 'express-ts-zod-openapi';
 
 Add error handling middleware to format validation errors:
 
@@ -358,9 +358,9 @@ HandlerContext<{ body: CreateUserType }, AuthRequest>
 
 ## Project Structure Best Practices
 
-```Why express-zod-openapi?
+```Why express-ts-zod-openapi?
 
-| Feature | express-zod-openapi | Traditional Express |
+| Feature | express-ts-zod-openapi | Traditional Express |
 |---------|---------------------|---------------------|
 | Type Safety | ✅ Full inference | ❌ Manual types |
 | Request Validation | ✅ Automatic | ❌ Manual |
@@ -380,9 +380,9 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## Issues & Support
 
-- 🐛 [Report bugs](https://github.com/yourusername/express-zod-openapi/issues)
-- 💡 [Request features](https://github.com/yourusername/express-zod-openapi/issues)
-- 📖 [View documentation](https://github.com/yourusername/express-zod-openapi#readme)
+- 🐛 [Report bugs](https://github.com/pvakharia9033/express-ts-zod-openapi/issues)
+- 💡 [Request features](https://github.com/pvakharia9033/express-ts-zod-openapi/issues)
+- 📖 [View documentation](https://github.com/pvakharia9033/express-ts-zod-openapi#readme)
 
 ## Roadmap
 
