@@ -1,0 +1,7 @@
+{
+  "name": "express-zod-swgger-example",
+  "private": true,
+  "scripts": {
+    "start": "ts-node --project ./tsconfig.json server.ts"
+  }
+}
